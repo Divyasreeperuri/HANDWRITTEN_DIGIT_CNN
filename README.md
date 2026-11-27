@@ -1,74 +1,122 @@
+
+
 # DigitAI — Handwritten Digit Recognition Using CNN
 
-DigitAI is a full-stack handwritten digit recognition application built with **TensorFlow/Keras**, **OpenCV**, **Flask**, **Bootstrap**, and **React + Express**. It supports single-digit (`0–9`), double-digit (`48`, `96`), and multi-digit (`2026`, `987654`) recognition via live pointer/touch/stylus drawing and image uploads (`PNG`, `JPG`, `JPEG`).
+**DigitAI** is a web-based handwritten digit recognition application that uses a Convolutional Neural Network (CNN) to recognize digits drawn by users or uploaded as images. It supports single-digit, double-digit, and multi-digit recognition.
+
+## 🚀 Live Demo
+
+[[**Try DigitAI**](PASTE_YOUR_RENDER_URL_HERE)](https://handwritten-digit-cnn.onrender.com)
+
+
+## Features
+
+- Recognizes handwritten digits from 0–9.
+- Supports single-digit, double-digit, and multi-digit input.
+- Allows users to draw digits using a mouse, touch screen, or stylus.
+- Supports image uploads in PNG, JPG, and JPEG formats.
+- Displays predictions and confidence scores.
+- Preprocesses images for CNN-based recognition.
+
+## Technology Stack
+
+- **Frontend:** React, Vite, Bootstrap, Tailwind CSS
+- **Backend:** Node.js, Express, Python, Flask
+- **Machine Learning:** TensorFlow/Keras, CNN
+- **Image Processing:** OpenCV
+- **Language:** TypeScript, JavaScript, Python
 
 ## Project Structure
 
 ```text
-DigitAI/
-├── backend/
-│   ├── __init__.py
-│   ├── app.py                # Flask REST API (/api/health, /api/model-info, /api/predict, /api/samples, /api/evaluate)
-│   ├── model_service.py      # Model loading, inference, sample gallery generator, live MNIST evaluation
-│   └── preprocessing.py      # OpenCV grayscale, denoising, auto-inversion, segmentation & 28x28 MNIST normalization
-├── training/
-│   ├── train_cnn.py          # Trains Baseline & Enhanced CNNs, saves Keras model, metrics JSON, weights JSON & plots
-│   └── evaluate_model.py     # Evaluates trained CNN on MNIST test set & synthetic multi-digit images
-├── tests/
-│   ├── test_digitai.py       # Automated Pytest suite (model, 10 classes, single/double/multi, edge cases, API)
-│   └── verify_node_engine.mjs # Integration test against Express API
-├── templates/
-│   └── index.html            # Standalone Bootstrap 5 UI served directly by Flask
-├── static/
-│   ├── css/style.css
-│   ├── js/app.js
-│   ├── plots/                # Generated training curves & confusion matrix PNGs
-│   └── samples/              # Sample handwriting gallery PNGs
-├── src/                      # React + Vite + Tailwind frontend & Node Express TypeScript engine
-├── models/                   # Saved Keras model (digitai_cnn.keras), metrics, and exported weights
-├── server.ts                 # Express + Vite server (proxies to Flask or runs native TypeScript CNN engine)
-├── requirements.txt
+HANDWRITTEN_DIGIT_CNN/
+├── backend/       # Flask API and image preprocessing
+├── models/        # Saved CNN model and exported weights
+├── src/           # React frontend
+├── static/        # CSS, JavaScript, plots, and sample images
+├── templates/     # Flask web interface
+├── tests/         # Automated tests
+├── training/      # CNN training and evaluation scripts
 ├── package.json
-├── README.md
-└── PROJECT_REPORT.md
+├── requirements.txt
+├── server.ts
+└── README.md
 ```
 
-## Windows Installation & Startup Commands
+## Run Locally
 
-Open **PowerShell** or **Command Prompt** inside the project root directory and run:
+### Requirements
 
-```powershell
-# 1. Create a Python virtual environment (.venv is automatically detected by DigitAI)
-python -m venv .venv
+- Node.js and npm
+- Python 3
+- Git
 
-# 2. Activate the virtual environment (PowerShell; use source .venv/bin/activate on Linux/macOS)
-.\.venv\Scripts\Activate.ps1
+### Start the application
 
-# 3. Upgrade pip and install Python dependencies (includes tensorflow, opencv-python-headless, flask)
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+Clone the repository and open its folder:
 
-# 4. Train the Baseline & Enhanced CNN models on MNIST
-python training/train_cnn.py
-
-# 5. Evaluate the trained model on MNIST test images and multi-digit samples
-python training/evaluate_model.py
-
-# 6. Run automated Pytest suite
-pytest tests/test_digitai.py -v
-
-# 7. Start the Flask backend server (serves API + Bootstrap UI on port 5001)
-set DIGITAI_USE_BOOTSTRAP_TEMPLATE=1
-python backend/app.py
+```bash
+git clone https://github.com/Divyasreeperuri/HANDWRITTEN_DIGIT_CNN.git
+cd HANDWRITTEN_DIGIT_CNN
 ```
 
-Open `http://127.0.0.1:5001` in your browser.
+Install the Node.js dependencies:
 
-### Optional: Running the React + Express UI Locally
-
-```powershell
+```bash
 npm install
+```
+
+Start the application:
+
+```bash
 npm run dev
 ```
 
-When Flask (`backend/app.py`) is running on port `5001`, Express proxies `/api/*` requests to Flask. If Flask is stopped, Express runs the exported Keras weights (`models/cnn_weights.json`) natively via TypeScript.
+Open the local URL displayed in the terminal.
+
+### Optional: Run the Flask backend
+
+Create and activate a Python virtual environment, then install the requirements:
+
+```bash
+python -m venv .venv
+```
+
+On Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+Install the Python dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Start Flask:
+
+```bash
+python backend/app.py
+```
+
+## API Endpoints
+
+| Endpoint | Purpose |
+|---|---|
+| `/api/health` | Checks backend health |
+| `/api/model-info` | Returns model information |
+| `/api/predict` | Predicts digits from input |
+| `/api/samples` | Provides sample images |
+| `/api/evaluate` | Runs model evaluation |
+
+## Machine Learning
+
+DigitAI uses a CNN trained for handwritten digit recognition. Image preprocessing and segmentation help prepare input images for prediction. The application can recognize individual digits and sequences of digits.
+
+## Author
+
+**Divyasreeperuri**
+
+GitHub: [@Divyasreeperuri](https://github.com/Divyasreeperuri)
+
