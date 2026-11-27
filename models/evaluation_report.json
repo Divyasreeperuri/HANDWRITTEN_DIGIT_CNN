@@ -1,0 +1,171 @@
+{
+  "mnist_evaluation": {
+    "samples_evaluated": 2000,
+    "accuracy": 0.9875,
+    "loss": 0.037436,
+    "precision_macro": 0.987805,
+    "recall_macro": 0.987389,
+    "f1_macro": 0.987541,
+    "total_inference_ms": 634.31,
+    "ms_per_digit": 0.3172,
+    "confusion_matrix": [
+      [
+        174,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        234,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        213,
+        0,
+        2,
+        0,
+        0,
+        4,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        207,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        214,
+        0,
+        0,
+        0,
+        0,
+        3
+      ],
+      [
+        0,
+        0,
+        0,
+        4,
+        0,
+        175,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        177,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        203,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        188,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        2,
+        190
+      ]
+    ]
+  },
+  "custom_multi_digit_evaluation": [
+    {
+      "expected": "7",
+      "predicted": "7",
+      "match": true,
+      "confidence": 0.999894,
+      "processing_time_ms": 73.78
+    },
+    {
+      "expected": "48",
+      "predicted": "48",
+      "match": true,
+      "confidence": 0.997926,
+      "processing_time_ms": 71.69
+    },
+    {
+      "expected": "96",
+      "predicted": "96",
+      "match": true,
+      "confidence": 0.995403,
+      "processing_time_ms": 71.44
+    },
+    {
+      "expected": "2026",
+      "predicted": "2026",
+      "match": true,
+      "confidence": 0.99683,
+      "processing_time_ms": 80.1
+    },
+    {
+      "expected": "987654",
+      "predicted": "987654",
+      "match": true,
+      "confidence": 0.99557,
+      "processing_time_ms": 75.86
+    }
+  ]
+}

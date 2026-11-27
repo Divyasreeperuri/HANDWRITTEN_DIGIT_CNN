@@ -1,0 +1,6 @@
+{
+  "name": "DigitAI",
+  "description": "Handwritten digit recognition using Convolutional Neural Networks (CNN) with single, double, and multi-digit segmentation, live canvas drawing, and MNIST evaluation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
